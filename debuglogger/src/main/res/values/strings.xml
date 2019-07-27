@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DebugLogger</string>
+    <string name="you_message">Your Message</string>
+</resources>
