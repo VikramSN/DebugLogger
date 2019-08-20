@@ -64,6 +64,36 @@ public class Utility {
         toast.setView(layout);
         toast.show();
     }
+    
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public static void customToastShort(Context c, String message, int drawableIcon, int backgroundColor,int gravity) {
+        @SuppressLint("InflateParams") View layout = LayoutInflater.from(c).inflate(R.layout.custom_toast,null);
+        layout.setBackgroundTintList(c.getResources().getColorStateList(backgroundColor));
+        TextView text = layout.findViewById(R.id.toastText);
+        ImageView img = layout.findViewById(R.id.toastImage);
+        text.setText(message);
+        img.setImageResource(drawableIcon);
+        Toast toast = new Toast(c);
+        toast.setGravity(gravity, 0, 0);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setView(layout);
+        toast.show();
+    }
+    
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public static void customToastLong(Context c, String message, int drawableIcon, int backgroundColor,int gravity) {
+        @SuppressLint("InflateParams") View layout = LayoutInflater.from(c).inflate(R.layout.custom_toast,null);
+        layout.setBackgroundTintList(c.getResources().getColorStateList(backgroundColor));
+        TextView text = layout.findViewById(R.id.toastText);
+        ImageView img = layout.findViewById(R.id.toastImage);
+        text.setText(message);
+        img.setImageResource(drawableIcon);
+        Toast toast = new Toast(c);
+        toast.setGravity(gravity, 0, 0);
+        toast.setDuration(Toast.LENGTH_LONG);
+        toast.setView(layout);
+        toast.show();
+    }
 
     public static void LogD(String tag, String debugMSG) {
         Log.d(tag, debugMSG);
